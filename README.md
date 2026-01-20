@@ -1,6 +1,6 @@
-# VoidLink Website
+# VoidLink
 
-A modern, responsive website for voidlink.cloud built with HTML, CSS, and JavaScript.
+A modern, responsive website template built with HTML, CSS, and JavaScript featuring space-themed animations.
 
 ## Features
 
@@ -8,6 +8,7 @@ A modern, responsive website for voidlink.cloud built with HTML, CSS, and JavaSc
 - 📱 Fully responsive (mobile, tablet, desktop)
 - ⚡ Smooth animations and transitions
 - 🚀 Fast loading and optimized
+- 🌌 Space-themed background with void clouds, lightning effects, and spaceship
 - ♿ Accessible markup and semantic HTML
 
 ## Getting Started
@@ -33,49 +34,28 @@ Then visit `http://localhost:8000` in your browser.
 
 ## Deployment
 
-### Option 1: Static Hosting Services (Recommended)
+### GitHub Pages (Recommended)
 
-The easiest way to deploy is using static hosting services:
+1. Fork or clone this repository
+2. Go to repository Settings > Pages
+3. Select "Deploy from a branch"
+4. Choose your branch and `/ (root)` folder
+5. Save and wait for deployment
+6. Your site will be available at `https://username.github.io/repository-name`
+
+### Other Hosting Options
 
 #### **Netlify** (Free & Easy)
 1. Go to [netlify.com](https://www.netlify.com)
 2. Sign up or log in
 3. Drag and drop your project folder onto Netlify's dashboard
-4. Configure your domain (voidlink.cloud) in the site settings
+4. Deploy automatically
 
 #### **Vercel** (Free & Fast)
 1. Go to [vercel.com](https://vercel.com)
 2. Sign up with GitHub
 3. Import your repository
 4. Deploy automatically
-5. Add your custom domain in project settings
-
-#### **GitHub Pages** (Free)
-1. Push your code to a GitHub repository
-2. Go to repository Settings > Pages
-3. Select your branch and folder
-4. Add custom domain in repository settings
-
-### Option 2: Traditional Web Hosting
-
-1. Upload all files to your web hosting provider
-2. Ensure `index.html` is in the root directory
-3. Point your domain (voidlink.cloud) to your hosting provider's nameservers
-
-### Domain Configuration
-
-After deploying, configure your domain:
-
-1. **Add DNS Records:**
-   - If using Netlify/Vercel: They'll provide DNS settings
-   - Add an A record or CNAME pointing to your hosting provider
-
-2. **SSL Certificate:**
-   - Most modern hosting services provide free SSL certificates
-   - Enable HTTPS for your domain
-
-3. **Test:**
-   - Visit `voidlink.cloud` to verify everything works
 
 ## Customization
 
@@ -94,6 +74,15 @@ Edit the CSS variables in `styles.css`:
 - Update the contact form action URL (currently just shows an alert)
 - Modify the logo text in the navbar
 
+### Space Animation
+The space animation includes:
+- Twinkling stars background
+- Drifting void clouds (nebula effects)
+- Random lightning/electrostatic discharge
+- Flying spaceship with engine trail
+
+To modify the animation, edit the CSS classes starting with `.space-container`, `.stars`, `.void-cloud`, `.lightning`, and `.spaceship`.
+
 ### Add Pages
 1. Create new HTML files (e.g., `about.html`)
 2. Link to them from the navigation
@@ -102,21 +91,12 @@ Edit the CSS variables in `styles.css`:
 ## Project Structure
 
 ```
-voidlink.cloud/
+project/
 ├── index.html      # Main HTML file
 ├── styles.css      # All styles
 ├── script.js       # JavaScript functionality
 └── README.md       # This file
 ```
-
-## Next Steps
-
-Consider adding:
-- Backend API for contact form submissions
-- Blog functionality
-- More interactive features
-- Analytics (Google Analytics, etc.)
-- SEO optimization (meta tags, Open Graph, etc.)
 
 ## License
 
