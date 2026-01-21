@@ -184,9 +184,137 @@ body {
     animation: twinkle 8s ease-in-out infinite alternate;
 }
 
+.stars4 {
+    background-image:
+        radial-gradient(2px 2px at 25px 30px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 85px 45px, #eee, transparent),
+        radial-gradient(1px 1px at 45px 85px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 125px 20px, rgba(255,255,255,0.4), transparent);
+    background-size: 160px 110px;
+    animation: twinkle 10s ease-in-out infinite alternate-reverse;
+}
+
 @keyframes twinkle {
     0% { opacity: 0.3; }
     100% { opacity: 1; }
+}
+
+/* Planets */
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    animation: drift 40s linear infinite;
+    z-index: 1;
+}
+
+.planet-1 {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, #4a90e2, #2c5282);
+    box-shadow:
+        inset -20px -20px 0 rgba(0,0,0,0.3),
+        0 0 20px rgba(74, 144, 226, 0.3);
+    top: 15%;
+    right: 10%;
+    animation-delay: 0s;
+    animation-duration: 45s;
+}
+
+.planet-2 {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at 25% 25%, #f6ad55, #d69e2e);
+    box-shadow:
+        inset -15px -15px 0 rgba(0,0,0,0.4),
+        0 0 15px rgba(246, 173, 85, 0.4);
+    top: 40%;
+    left: 5%;
+    animation-delay: -12s;
+    animation-duration: 50s;
+}
+
+.planet-3 {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle at 35% 35%, #68d391, #38a169);
+    box-shadow:
+        inset -10px -10px 0 rgba(0,0,0,0.3),
+        0 0 10px rgba(104, 211, 145, 0.3);
+    bottom: 25%;
+    right: 20%;
+    animation-delay: -25s;
+    animation-duration: 35s;
+}
+
+/* Asteroids */
+.asteroid {
+    position: absolute;
+    background: #8b8680;
+    animation: asteroid-float 25s linear infinite;
+    z-index: 1;
+    transform: rotate(45deg);
+}
+
+.asteroid::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(0,0,0,0.3) 50%, transparent 70%);
+    border-radius: inherit;
+}
+
+.asteroid-1 {
+    width: 12px;
+    height: 12px;
+    top: 20%;
+    left: 70%;
+    animation-delay: 0s;
+    border-radius: 20% 60% 40% 80%;
+}
+
+.asteroid-2 {
+    width: 18px;
+    height: 18px;
+    top: 35%;
+    right: 5%;
+    animation-delay: -8s;
+    border-radius: 60% 20% 80% 40%;
+}
+
+.asteroid-3 {
+    width: 8px;
+    height: 8px;
+    bottom: 40%;
+    left: 25%;
+    animation-delay: -15s;
+    border-radius: 40% 80% 20% 60%;
+}
+
+.asteroid-4 {
+    width: 15px;
+    height: 15px;
+    top: 10%;
+    left: 40%;
+    animation-delay: -20s;
+    border-radius: 80% 40% 60% 20%;
+}
+
+.asteroid-5 {
+    width: 10px;
+    height: 10px;
+    bottom: 15%;
+    right: 35%;
+    animation-delay: -5s;
+    border-radius: 30% 70% 50% 90%;
+}
+
+@keyframes asteroid-float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(20px, -15px) rotate(90deg); }
+    50% { transform: translate(-10px, 25px) rotate(180deg); }
+    75% { transform: translate(-25px, -5px) rotate(270deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
 }
 
 /* Void Clouds */
@@ -273,18 +401,19 @@ body {
 /* Rocket Ship */
 .spaceship {
     position: absolute;
-    top: 70%;
-    left: -80px;
-    animation: fly-by 18s infinite linear;
+    top: 65%;
+    left: -100px;
+    animation: fly-by 20s infinite linear;
     z-index: 2;
+    transform: rotate(90deg);
     transform-origin: center;
 }
 
 .ship-body {
-    width: 24px;
-    height: 60px;
-    background: linear-gradient(180deg, #ffffff 0%, #c0c0c0 20%, #808080 100%);
-    border-radius: 12px 12px 8px 8px;
+    width: 60px;
+    height: 24px;
+    background: linear-gradient(90deg, #ffffff 0%, #c0c0c0 20%, #808080 100%);
+    border-radius: 8px 20px 20px 8px;
     position: relative;
     border: 1px solid #666;
 }
@@ -292,34 +421,34 @@ body {
 .ship-body::before {
     content: '';
     position: absolute;
-    top: -8px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    right: -16px;
+    transform: translateY(-50%);
     width: 0;
     height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 16px solid #ff6b35;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 16px solid #ff6b35;
 }
 
 .ship-body::after {
     content: '';
     position: absolute;
-    top: 15px;
-    left: 6px;
-    width: 12px;
-    height: 8px;
-    background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+    top: 6px;
+    left: 15px;
+    width: 8px;
+    height: 12px;
+    background: linear-gradient(180deg, #1e3a8a, #3b82f6);
     border-radius: 2px;
     opacity: 0.8;
 }
 
 .ship-fins {
     position: absolute;
-    bottom: -8px;
-    left: -6px;
-    width: 36px;
-    height: 12px;
+    top: -6px;
+    left: -8px;
+    width: 12px;
+    height: 36px;
 }
 
 .ship-fins::before,
@@ -328,25 +457,25 @@ body {
     position: absolute;
     width: 0;
     height: 0;
-    border-left: 8px solid #333;
-    border-right: 8px solid transparent;
-    border-bottom: 12px solid #333;
+    border-top: 8px solid #333;
+    border-bottom: 8px solid transparent;
+    border-right: 12px solid #333;
 }
 
 .ship-fins::before {
-    left: 0;
+    top: 0;
     transform: rotate(-10deg);
 }
 
 .ship-fins::after {
-    right: 0;
+    bottom: 0;
     transform: rotate(10deg);
 }
 
 .ship-engines {
     position: absolute;
-    bottom: -20px;
-    left: 4px;
+    top: 4px;
+    left: -20px;
     width: 16px;
     height: 16px;
 }
@@ -355,44 +484,45 @@ body {
 .ship-engines::after {
     content: '';
     position: absolute;
-    width: 6px;
-    height: 8px;
+    width: 8px;
+    height: 6px;
     background: #ff4500;
     border-radius: 3px;
     box-shadow: 0 0 8px #ff4500, 0 0 16px #ff4500;
 }
 
 .ship-engines::before {
-    left: 0;
+    top: 0;
 }
 
 .ship-engines::after {
-    right: 0;
+    bottom: 0;
 }
 
 .engine-trail {
     position: absolute;
-    bottom: -35px;
-    left: 6px;
-    width: 12px;
-    height: 20px;
-    background: linear-gradient(to bottom,
+    top: 6px;
+    left: -40px;
+    width: 20px;
+    height: 12px;
+    background: linear-gradient(to right,
         rgba(255, 69, 0, 0.9) 0%,
         rgba(255, 140, 0, 0.8) 30%,
         rgba(255, 215, 0, 0.6) 60%,
         rgba(255, 255, 255, 0.4) 80%,
         transparent 100%);
-    border-radius: 50% 50% 30% 30%;
+    border-radius: 30% 50% 50% 30%;
     animation: engine-flame 0.2s infinite alternate;
     filter: blur(1px);
 }
 
 @keyframes fly-by {
-    0% { transform: translateX(-100px) translateY(0px) rotate(0deg); }
-    25% { transform: translateX(25vw) translateY(-15px) rotate(2deg); }
-    50% { transform: translateX(50vw) translateY(5px) rotate(-1deg); }
-    75% { transform: translateX(75vw) translateY(-8px) rotate(1deg); }
-    100% { transform: translateX(calc(100vw + 100px)) translateY(0px) rotate(0deg); }
+    0% { transform: translateX(-120px) translateY(0px) rotate(90deg); }
+    20% { transform: translateX(20vw) translateY(-10px) rotate(92deg); }
+    40% { transform: translateX(45vw) translateY(8px) rotate(88deg); }
+    60% { transform: translateX(70vw) translateY(-5px) rotate(91deg); }
+    80% { transform: translateX(90vw) translateY(3px) rotate(89deg); }
+    100% { transform: translateX(calc(100vw + 120px)) translateY(0px) rotate(90deg); }
 }
 
 @keyframes engine-flame {
